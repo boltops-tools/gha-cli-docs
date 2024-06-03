@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# Trap ^C
+Signal.trap("INT") {
+  puts "\nCtrl-C detected. Exiting..."
+  sleep 0.1
+  exit
+}
+
+$:.unshift(File.expand_path("../../lib", __FILE__))
+require "cli-docs"
+require "cli_docs/cli"
+
+CliDocs::CLI.start(ARGV)

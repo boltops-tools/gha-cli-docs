@@ -1,0 +1,11 @@
+name: 'CLI docs'
+description: 'Generates CLI docs'
+inputs:
+  repo:
+    description: 'repo to use as source of cli'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repo }}
